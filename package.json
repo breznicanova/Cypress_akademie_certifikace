@@ -1,0 +1,17 @@
+{
+  "name": "cypress_akademie_certifikace",
+  "version": "1.0.0",
+  "description": "Testing the TEG#B banking application in development. Cypress Academy Winter 2024 certification.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.8.1"
+  }
+}
