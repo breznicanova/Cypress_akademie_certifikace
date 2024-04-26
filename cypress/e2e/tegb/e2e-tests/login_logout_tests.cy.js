@@ -47,8 +47,8 @@ describe("Login, fill prifile and logout", () => {
       cy.setCookie("access_token", token);
       accounts.createAccount(token, startBalance, type).as("account");
       cy.get("@account").then((accountResponse) => {
-        accountNumber = cy.wrap(accountResponse.body.accountNumber);
-        balance = cy.wrap(accountResponse.body.balance);
+        accountNumber = accountResponse.body.accountNumber;
+        balance = accountResponse.body.balance;
         cy.log(accountNumber);
         cy.log(balance);
 
@@ -67,17 +67,10 @@ describe("Login, fill prifile and logout", () => {
           .surnameHaveText(lastName)
           .emailHaveText(email)
           .telephoneHaveText(telephone)
-          .ageHaveText(age);
-
-        // TODO
-
-        cy.get("[data-testid='account-number']")
-          .should("be.visible")
-          .and("contain.text", accountNumber);
-
-        cy.get("[data-testid='account-balance']")
-          .should("be.visible")
-          .and("contain.text", balance);
+          .ageHaveText(age)
+          .accountNumberHaveValueAndIsVisible(accountNumber)
+          .balanceHaveTextAndIsVisible(balance)
+          .clickLogout();
       });
     });
   });

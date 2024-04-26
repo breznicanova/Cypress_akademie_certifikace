@@ -1,6 +1,7 @@
 import { customElement } from "../../helpers/custom_element";
 import { HeaderSection } from "./common/header_page";
 import { EditProfile } from "./edit_profile_modal";
+import { LoginPage } from "./login_page";
 
 export class HomePage extends HeaderSection {
   constructor() {
@@ -15,6 +16,7 @@ export class HomePage extends HeaderSection {
     this.ageValue = customElement("[data-testid='age']");
     this.accountNumberValue = customElement("[data-testid='account-number']");
     this.accountBalanceValue = customElement("[data-testid='account-balance']");
+    this.logoutButton = customElement(".logout-link");
   }
 
   clickEditProfile() {
@@ -50,7 +52,7 @@ export class HomePage extends HeaderSection {
   accountNumberHaveValueAndIsVisible(accountNumber) {
     this.accountNumberValue
       .get()
-      .should("contain.text", accountNumber)
+      .should("contain.text", accountNumber.toString())
       .and("be.visible");
     return this;
   }
@@ -58,8 +60,13 @@ export class HomePage extends HeaderSection {
   balanceHaveTextAndIsVisible(balance) {
     this.accountBalanceValue
       .get()
-      .should("contain.text", balance)
+      .should("contain.text", balance.toString())
       .and("be.visible");
     return this;
+  }
+
+  clickLogout() {
+    this.logoutButton.get().click();
+    return new LoginPage();
   }
 }
