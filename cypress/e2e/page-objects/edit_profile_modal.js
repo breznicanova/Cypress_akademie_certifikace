@@ -11,6 +11,9 @@ export class EditProfile extends HeaderSection {
     this.telephoneInput = customElement("[data-testid='chage-phone-input']");
     this.ageInput = customElement("[data-testid='chage-age-input']");
     this.saveForm = customElement("form");
+    this.exitButton = customElement(
+      "[data-testid='toggle-edit-profile-button']"
+    );
   }
 
   typeFirstName(firstName) {
@@ -40,6 +43,11 @@ export class EditProfile extends HeaderSection {
 
   clickSave() {
     this.saveForm.get().submit();
+    return new HomePage();
+  }
+
+  clickExit() {
+    this.exitButton.get().click();
     return new HomePage();
   }
 }

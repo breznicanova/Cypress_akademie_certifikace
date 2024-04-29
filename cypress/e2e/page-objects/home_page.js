@@ -5,7 +5,7 @@ import { LoginPage } from "./login_page";
 
 export class HomePage extends HeaderSection {
   constructor() {
-    super("tegb/profile");
+    super("dashboard");
     this.editProfileButton = customElement(
       "[data-testid='toggle-edit-profile-button']"
     );
@@ -17,6 +17,12 @@ export class HomePage extends HeaderSection {
     this.accountNumberValue = customElement("[data-testid='account-number']");
     this.accountBalanceValue = customElement("[data-testid='account-balance']");
     this.logoutButton = customElement(".logout-link");
+    this.logoImage = customElement("[data-testid='logo-img']");
+    this.headerText = customElement(".app-title");
+    this.successfullMessage = customElement(".update-message");
+    this.accountNumberHeader = customElement(
+      "[data-testid='account-number-heading']"
+    );
   }
 
   clickEditProfile() {
@@ -68,5 +74,47 @@ export class HomePage extends HeaderSection {
   clickLogout() {
     this.logoutButton.get().click();
     return new LoginPage();
+  }
+
+  logoIsVisible() {
+    this.logoImage.get().should("be.visible");
+    return this;
+  }
+
+  headerHaveText(text) {
+    this.headerText.get().should("have.text", text);
+    return this;
+  }
+
+  transactionsHaveText(text) {
+    this.dashboardTransactions.getXpath().should("have.text", text);
+    return this;
+  }
+
+  accountsIsNotClicked() {
+    this.dashboardAccounts.getXpath().should("not.have.attr", "onclick");
+    return this;
+  }
+
+  editProfileIsClickable() {
+    this.editProfileButton
+      .get()
+      .should("be.visible")
+      .should("be.enabled")
+      .click();
+    return new EditProfile();
+  }
+
+  messageIsVisibleAndHaveText(text) {
+    this.successfullMessage
+      .get()
+      .should("be.visible")
+      .should("have.text", text);
+    return this;
+  }
+
+  accountNumberContainsText(text) {
+    this.accountNumberHeader.get().should("contain", text);
+    return this;
   }
 }
