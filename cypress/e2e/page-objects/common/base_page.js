@@ -1,6 +1,6 @@
 export class BasePage {
   constructor(path) {
-    this.baseUrl = Cypress.env("tegb_api_url");
+    this.baseUrl = Cypress.env("tegb_url");
     this.path = path;
   }
 
