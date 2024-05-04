@@ -35,7 +35,7 @@ describe("Login, fill prifile and logout", () => {
     new LoginPage().openTegb();
   });
 
-  it.only("Register user and create account", () => {
+  it("Register user and create account", () => {
     const startBalance = 10000;
     const type = "checking";
     const user = new UserApi();
