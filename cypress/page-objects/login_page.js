@@ -1,4 +1,4 @@
-import { customElement } from "../../helpers/custom_element";
+import { customElement } from "../helpers/custom_element";
 import { HomePage } from "./home_page";
 
 export class LoginPage {

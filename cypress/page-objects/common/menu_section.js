@@ -1,4 +1,4 @@
-import { customElement } from "../../../helpers/custom_element";
+import { customElement } from "../../helpers/custom_element";
 import { BasePage } from "./base_page";
 
 export class MenuSection extends BasePage {

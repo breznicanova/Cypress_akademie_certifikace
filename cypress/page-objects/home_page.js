@@ -1,4 +1,4 @@
-import { customElement } from "../../helpers/custom_element";
+import { customElement } from "../helpers/custom_element";
 import { HeaderSection } from "./common/header_page";
 import { EditProfile } from "./edit_profile_modal";
 import { LoginPage } from "./login_page";

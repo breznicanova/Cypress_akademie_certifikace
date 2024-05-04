@@ -1,4 +1,4 @@
-import { customElement } from "../../helpers/custom_element";
+import { customElement } from "../helpers/custom_element";
 import { HeaderSection } from "./common/header_page";
 import { HomePage } from "./home_page";
 

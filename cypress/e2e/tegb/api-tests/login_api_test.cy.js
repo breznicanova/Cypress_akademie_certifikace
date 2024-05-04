@@ -1,5 +1,5 @@
 import { UserApi } from "../../../api/tegb/user_api";
-import { LoginPage } from "../../page-objects/login_page";
+import { LoginPage } from "../../../page-objects/login_page";
 
 describe("Login API test", () => {
   beforeEach(() => {

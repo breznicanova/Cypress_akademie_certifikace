@@ -1,5 +1,5 @@
-import { HomePage } from "../../page-objects/home_page";
-import { LoginPage } from "../../page-objects/login_page";
+import { HomePage } from "../../../page-objects/home_page";
+import { LoginPage } from "../../../page-objects/login_page";
 import { faker } from "@faker-js/faker";
 
 describe("Dashboard Page Atomic Tests", { testIsolation: false }, () => {

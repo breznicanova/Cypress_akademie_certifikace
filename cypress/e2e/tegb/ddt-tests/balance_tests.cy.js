@@ -1,5 +1,5 @@
 import newBalanceData from "../../../fixtures/account_balance_data.json";
-import { LoginPage } from "../../page-objects/login_page";
+import { LoginPage } from "../../../page-objects/login_page";
 import { faker } from "@faker-js/faker";
 import { AccountApi } from "../../../api/tegb/create_account_api";
 import { UserApi } from "../../../api/tegb/user_api";

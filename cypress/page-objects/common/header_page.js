@@ -1,4 +1,4 @@
-import { customElement } from "../../../helpers/custom_element";
+import { customElement } from "../../helpers/custom_element";
 import { LoginPage } from "../login_page";
 import { MenuSection } from "./menu_section";
 
