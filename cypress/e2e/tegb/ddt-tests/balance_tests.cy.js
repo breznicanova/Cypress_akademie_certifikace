@@ -37,7 +37,7 @@ describe("DDT test account balance", () => {
   });
 
   newBalanceData.forEach((balanceValue) => {
-    it(`Add balance ${balanceValue.balance} Kč`, () => {
+    it(`Add balance ${balanceValue.balance} Kč and checking if it has been added`, () => {
       const value = balanceValue.balance;
       const type = "checking";
       const user = new UserApi();
