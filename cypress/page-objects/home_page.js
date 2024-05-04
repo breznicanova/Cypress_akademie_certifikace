@@ -105,14 +105,6 @@ export class HomePage extends HeaderSection {
     return new EditProfile();
   }
 
-  messageIsVisibleAndHaveText(text) {
-    this.successfullMessage
-      .get()
-      .should("be.visible")
-      .should("have.text", text);
-    return this;
-  }
-
   accountNumberContainsText(text) {
     this.accountNumberHeader.get().should("contain", text);
     return this;
